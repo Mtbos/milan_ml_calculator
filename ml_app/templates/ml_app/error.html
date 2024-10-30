@@ -1,0 +1,23 @@
+<!-- ml_app/templates/ml_app/error.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ml_app/styles.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Error</h1>
+        <p>{{ error }}</p><br><br>
+        <p><strong>This is a Warning:
+            if your csv file contain:<br>
+            1. Only numeric data : Then try using the Regressions<br>
+            2. Categoric data: Then try using the Calssifiers 
+        </strong></p>
+        <a href="{% url 'upload_csv' %}">Go Back to Upload</a>
+    </div>
+</body>
+</html>

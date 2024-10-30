@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Results</title>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'ml_app/styles.css' %}">
+</head>
+<body>
+    
+    <div class="container result-container">
+        <h1>Prediction Results</h1>
+        <p><strong>Model Used:</strong> {{ model }}</p>
+        <p><strong>Target Column:</strong> {{ target_column }}</p>
+        <p><strong>{{ score_type }}:</strong> {{ score }}</p>
+        
+        <h2>Sample Predictions:</h2>
+        <ul>
+            {% for pred in predictions %}
+                <li>{{ pred }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'upload_csv' %}">Upload another file</a>
+    </div>
+</body>
+</html>

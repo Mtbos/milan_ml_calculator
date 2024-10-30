@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUP Error</title>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'ml_app/styles.css' %}">
+</head>
+<body>
+    <!-- ml_app/templates/ml_app/upload.html -->
+
+    <div class="container">
+        
+        <p><strong>User is Alredy Created! Please Try Login</strong></p>
+        <br>
+        <a href="{% url 'home' %}">Go Back to Home Page</a>
+    </div>
+    
+</body>
+</html>

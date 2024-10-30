@@ -1,0 +1,23 @@
+<!-- ml_app/templates/ml_app/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>
+        {% load static %}
+    
+        <link rel="stylesheet" type="text/css" href="{% static 'ml_app/page.css' %}">
+    </head>
+<body>
+    
+    <div class="container">
+        {% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}! <a href="{% url 'upload_csv' %}">Upload CSV</a> or <a href="{% url 'logout' %}">Logout</a></p>
+{% else %}
+    <p>Welcome to ML Calculator! <a href="{% url 'signup' %}">Sign Up</a> or <a href="{% url 'login' %}">Login</a></p>
+{% endif %}
+    </div>
+</body>
+</html>
+
+

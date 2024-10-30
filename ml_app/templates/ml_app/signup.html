@@ -1,0 +1,26 @@
+<!-- ml_app/templates/ml_app/signup.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>
+        {% load static %}
+    
+        <link rel="stylesheet" type="text/css" href="{% static 'ml_app/page.css' %}">
+    </head>
+<body>
+    
+    <div class="container">
+        <h2>Sign Up</h2>
+<p>{{ project_info }}</p>  <!-- Project information section -->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign Up</button>
+</form>
+<p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+
+    </div>
+</body>
+</html>
+

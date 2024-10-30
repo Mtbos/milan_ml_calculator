@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload CSV</title>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'ml_app/styles.css' %}">
+</head>
+<body>
+    <!-- ml_app/templates/ml_app/upload.html -->
+
+    <div class="container">
+        <h1>ML_CALCULATOR</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Upload and Predict</button>
+        </form>
+        <br>
+        <a href="{% url 'home' %}">Go Back to Home Page</a>
+    </div>
+    
+</body>
+</html>
